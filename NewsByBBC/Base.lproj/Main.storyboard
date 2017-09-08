@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ac1-FK-tUw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Chunk Five Print.ttf">
+            <string>ChunkFivePrint</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="NewsByBBC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +25,135 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bbc_news_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5IN-6G-PnA" customClass="FancyImageView" customModule="NewsByBBC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="IDJ-H2-QIh"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-GU-mIu">
+                                <rect key="frame" x="0.0" y="262" width="375" height="405"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="89" id="dvg-4c-FvJ" customClass="CustomTableViewCell" customModule="NewsByBBC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dvg-4c-FvJ" id="d5v-b0-w9f">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wuW-S3-tdn">
+                                                    <rect key="frame" x="20" y="21.5" width="335" height="67"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfA-UG-Zva">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
+                                                            <fontDescription key="fontDescription" name="ChunkFivePrint" family="ChunkFive Print" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CB5-dF-hht">
+                                                            <rect key="frame" x="0.0" y="17" width="335" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="IWs-T5-dVE"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wuW-S3-tdn" firstAttribute="leading" secondItem="d5v-b0-w9f" secondAttribute="leading" constant="20" id="7jS-Oq-6ii"/>
+                                                <constraint firstAttribute="trailing" secondItem="wuW-S3-tdn" secondAttribute="trailing" constant="20" id="E24-TM-9rT"/>
+                                                <constraint firstAttribute="bottom" secondItem="wuW-S3-tdn" secondAttribute="bottom" id="UZO-2N-9YA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="defLbl" destination="CB5-dF-hht" id="xZ2-Mw-bGl"/>
+                                            <outlet property="titleLbl" destination="ZfA-UG-Zva" id="6UK-rJ-TdY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5IN-6G-PnA" secondAttribute="trailing" id="3bp-Lq-MHb"/>
+                            <constraint firstItem="5u7-GU-mIu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="92T-G1-Q0P"/>
+                            <constraint firstItem="5u7-GU-mIu" firstAttribute="top" secondItem="5IN-6G-PnA" secondAttribute="bottom" constant="8" id="Md3-Cg-uJv"/>
+                            <constraint firstItem="5IN-6G-PnA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xl8-hb-uDH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5u7-GU-mIu" secondAttribute="bottom" id="j4M-yc-Ou1"/>
+                            <constraint firstAttribute="trailing" secondItem="5u7-GU-mIu" secondAttribute="trailing" id="pEp-ZX-Pld"/>
+                            <constraint firstItem="5IN-6G-PnA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y1Y-Xh-Rzr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0oi-qC-Fha">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="5u7-GU-mIu" id="cl1-Nv-IUU"/>
+                        <segue destination="nNI-Je-mAj" kind="show" identifier="segue" id="OSZ-OK-ey2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--News Page-->
+        <scene sceneID="icD-c2-JnK">
+            <objects>
+                <viewController id="nNI-Je-mAj" customClass="NewsPage" customModule="NewsByBBC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BiL-C1-Smb"/>
+                        <viewControllerLayoutGuide type="bottom" id="GJk-bf-OR8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0sy-g3-HKz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ii-5H-GDG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Ii-5H-GDG" firstAttribute="leading" secondItem="0sy-g3-HKz" secondAttribute="leading" id="124-WN-pBy"/>
+                            <constraint firstItem="GJk-bf-OR8" firstAttribute="top" secondItem="4Ii-5H-GDG" secondAttribute="bottom" id="Ae2-Sn-P5v"/>
+                            <constraint firstAttribute="trailing" secondItem="4Ii-5H-GDG" secondAttribute="trailing" id="aCU-50-hHI"/>
+                            <constraint firstItem="4Ii-5H-GDG" firstAttribute="top" secondItem="BiL-C1-Smb" secondAttribute="bottom" constant="-64" id="e0D-X8-drG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="4Ii-5H-GDG" id="L1L-am-huu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRy-jE-mOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805.5999999999999" y="145.27736131934034"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Go2-mL-yhB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ac1-FK-tUw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LHe-IY-zLa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e43-V4-0rc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbF-XM-Hx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bbc_news_logo" width="1024" height="576"/>
+    </resources>
 </document>
